@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sachin S | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .heading-font { font-family: 'Space Grotesk', sans-serif; }
+        
+        /* INFINITE PANNING BACKGROUND GRID */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            animation: panGrid 20s linear infinite;
+        }
+        @keyframes panGrid {
+            0% { background-position: 0 0; }
+            100% { background-position: 40px 40px; }
+        }
+
+        /* DYNAMIC SCROLL REVEALS */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Manga Panel Border Styling */
+        .comic-border {
+            border: 3px solid #000000;
+            box-shadow: 6px 6px 0px #000000;
+            background-color: #12141c;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .comic-border:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 8px 8px 0px #b91c1c;
+        }
+
+        /* Standard Anime Art Filter */
+        .manga-art-filter {
+            filter: grayscale(80%) contrast(120%) brightness(80%);
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+        .manga-panel-card:hover .manga-art-filter {
+            filter: grayscale(0%) contrast(110%) brightness(100%);
+        }
+        
+        /* Lighter filter for real human profile picture */
+        .profile-filter {
+            filter: grayscale(20%) contrast(110%);
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+        .manga-panel-card:hover .profile-filter {
+            filter: grayscale(0%) contrast(100%);
+        }
+    </style>
+</head>
+<body class="bg-[#0b0c10] text-[#e8e6e3] antialiased selection:bg-red-700 selection:text-white bg-grid">
+
+    <!-- FLOATING NAVIGATION -->
+    <nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-4xl bg-[#12141c] border-2 border-black shadow-[4px_4px_0px_#000] z-50 flex justify-between items-center px-6 py-3">
+        <span class="heading-font font-bold text-white tracking-wider">SACHIN S</span>
+        <div class="hidden md:flex gap-6 text-sm font-bold text-zinc-400">
+            <a href="#about" class="hover:text-white transition-colors">About</a>
+            <a href="#skills" class="hover:text-white transition-colors">Skills</a>
+            <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+            <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-[85vh] flex items-center justify-center border-b-4 border-black overflow-hidden pt-20 px-4 bg-[#0e1017]">
+        
+        <!-- ACTIVE VIDEO BACKGROUND -->
+        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-30 filter grayscale contrast-150 mix-blend-luminosity z-0">
+            <source src="WhatsApp Video 2026-06-16 at 23.26.26.mp4" type="video/mp4">
+        </video> 
+        
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0b0c10] via-[#0b0c10]/80 to-transparent z-10 pointer-events-none"></div>
+
+        <div class="relative max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center z-20 w-full">
+            <div class="space-y-6">
+                <h1 class="heading-font text-5xl md:text-7xl font-extrabold text-white tracking-tighter uppercase">
+                    SACHIN S
+                </h1>
+                <p class="text-xl text-zinc-400 font-medium">
+                    Cybersecurity Specialist | BCA Student
+                </p>
+                
+                <!-- UPDATED STATS GRID: Added 3+ Projects -->
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
+                    <div class="comic-border p-3 text-center backdrop-blur-md bg-[#12141c]/80">
+                        <span class="block text-xl font-bold text-white heading-font">8.34</span>
+                        <span class="text-xs text-zinc-500 uppercase font-bold">CGPA</span>
+                    </div>
+                    <div class="comic-border p-3 text-center backdrop-blur-md bg-[#12141c]/80">
+                        <span class="block text-xl font-bold text-white heading-font">3+</span>
+                        <span class="text-xs text-zinc-500 uppercase font-bold">Projects</span>
+                    </div>
+                    <div class="comic-border p-3 text-center backdrop-blur-md bg-[#12141c]/80">
+                        <span class="block text-xl font-bold text-white heading-font">5+</span>
+                        <span class="text-xs text-zinc-500 uppercase font-bold">Certs</span>
+                    </div>
+                    <div class="comic-border p-3 text-center backdrop-blur-md bg-[#12141c]/80">
+                        <span class="block text-xl font-bold text-white heading-font">CICSA</span>
+                        <span class="text-xs text-zinc-500 uppercase font-bold">Certified</span>
+                    </div>
+                </div>
+
+                <div class="pt-4 flex gap-4">
+                    <a href="#projects" class="px-6 py-3 bg-white text-black font-bold uppercase tracking-wider text-xs border-2 border-black shadow-[4px_4px_0px_#b91c1c] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0px_#b91c1c] transition-all">
+                        View Projects
+                    </a>
+                </div>
+            </div>
+
+            <!-- HERO IMAGE: YOUR REAL PHOTO -->
+            <div class="aspect-[4/3] comic-border relative overflow-hidden manga-panel-card bg-zinc-900">
+                <img src="1754187765887.jpg" alt="Sachin Profile Picture" class="w-full h-full profile-filter">
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-20 max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+        <!-- ABOUT IMAGE: DEKU STUDYING -->
+        <div class="md:col-span-1 aspect-square comic-border relative overflow-hidden manga-panel-card bg-zinc-900 order-2 md:order-1 reveal">
+            <img src="AOT/studing.jpg" alt="Studying Layout" class="w-full h-full manga-art-filter">
+        </div>
+
+        <div class="md:col-span-2 space-y-4 order-1 md:order-2 reveal">
+            <h2 class="heading-font text-3xl font-bold uppercase text-white tracking-tight mb-6">About Me</h2>
+            <p class="text-zinc-400 leading-relaxed text-base">
+                Motivated BCA 3rd-year student specializing in cybersecurity with hands-on experience in ethical hacking, network security, and vulnerability assessment. Certified in CICSA from Red Team Hackers Academy. Passionate about identifying and mitigating security threats through real-world projects and continuous learning. Seeking an opportunity to apply technical expertise in a cybersecurity role.
+            </p>
+            <p class="text-zinc-500 text-sm font-bold pt-4">
+                Languages: English (Professional), Malayalam (Native), Hindi (Fluent)
+            </p>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="py-20 border-y-4 border-black px-4 bg-[#0b0c10]/80 backdrop-blur-sm">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="heading-font text-3xl font-bold uppercase text-white tracking-tight mb-10 reveal">Technical Skills</h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="comic-border p-6 reveal" style="transition-delay: 100ms;">
+                    <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-3">Cybersecurity</h3>
+                    <p class="text-sm text-zinc-400 font-medium leading-relaxed">Ethical Hacking, Penetration Testing, VAPT, Network Security, Reconnaissance, Exploit Development</p>
+                </div>
+                <div class="comic-border p-6 reveal" style="transition-delay: 200ms;">
+                    <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-3">Security Tools</h3>
+                    <p class="text-sm text-zinc-400 font-medium leading-relaxed">Kali Linux, Metasploit, Nmap, Wireshark, Burp Suite, John the Ripper, WAPP</p>
+                </div>
+                <div class="comic-border p-6 reveal" style="transition-delay: 300ms;">
+                    <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-3">Programming</h3>
+                    <p class="text-sm text-zinc-400 font-medium leading-relaxed">Python, Java, HTML/CSS, JavaScript</p>
+                </div>
+                <div class="comic-border p-6 reveal" style="transition-delay: 400ms;">
+                    <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-3">Cloud & OS</h3>
+                    <p class="text-sm text-zinc-400 font-medium leading-relaxed">MySQL, Cloud Computing, Kali Linux, Ubuntu, Windows Server, Git, VirtualBox</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="py-20 max-w-5xl mx-auto px-4">
+        <h2 class="heading-font text-3xl font-bold uppercase text-white tracking-tight mb-10 reveal">Projects</h2>
+
+        <div class="space-y-12">
+            <!-- PROJECT 1: WAPT / DEATH NOTE L -->
+            <div class="comic-border overflow-hidden grid grid-cols-1 lg:grid-cols-3 manga-panel-card reveal">
+                <div class="lg:col-span-2 p-8 space-y-4">
+                    <div class="flex justify-between items-start gap-4 flex-wrap">
+                        <h3 class="text-xl font-bold text-white uppercase tracking-tight">Web Application Penetration Testing</h3>
+                        <span class="text-xs bg-white text-black font-bold px-3 py-1 uppercase">May 2026</span>
+                    </div>
+                    <p class="text-sm text-red-500 font-bold">Target: Altoro Mutual | Methodology: OWASP Top 10 (2021)</p>
+                    <ul class="text-sm text-zinc-400 space-y-2 list-disc pl-4">
+                        <li>Conducted a full-cycle pentest (black-box external + grey-box internal) covering network reconnaissance, SSL/TLS analysis, and web security testing.</li>
+                        <li>Discovered 22 vulnerabilities: 2 Critical (SQL Injection, auth bypass), 2 High, 4 Medium, and 4 Low findings.</li>
+                        <li>Manually validated critical exploits and delivered professional pentest reports with CVSS ratings.</li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-1 bg-zinc-950 min-h-[200px] border-t-2 lg:border-t-0 lg:border-l-2 border-black relative overflow-hidden flex items-center justify-center">
+                    <img src="death note images/Death note L anime character ☠️.jpg" alt="L Analyzing Layout" class="w-full h-full manga-art-filter">
+                </div>
+            </div>
+
+            <!-- PROJECT 2: AUTO-SCALING / IPPO BOXES -->
+            <div class="comic-border overflow-hidden grid grid-cols-1 lg:grid-cols-3 manga-panel-card reveal">
+                <div class="lg:col-span-2 p-8 space-y-4">
+                    <div class="flex justify-between items-start gap-4 flex-wrap">
+                        <h3 class="text-xl font-bold text-white uppercase tracking-tight">Auto-Scaling Inference Engine</h3>
+                        <span class="text-xs bg-white text-black font-bold px-3 py-1 uppercase">Feb - May 2026</span>
+                    </div>
+                    <p class="text-sm text-red-500 font-bold">FastAPI, HuggingFace, Docker, Kubernetes (K8s)</p>
+                    <ul class="text-sm text-zinc-400 space-y-2 list-disc pl-4">
+                        <li>Built a real-time ML inference API using FastAPI integrated with a pre-trained HuggingFace transformer model.</li>
+                        <li>Containerized using Docker and deployed on Kubernetes with NodePort services; implemented HPA.</li>
+                        <li>Executed 4 Agile sprints validating complex system stability under concurrent web traffic.</li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-1 bg-zinc-950 min-h-[200px] border-t-2 lg:border-t-0 lg:border-l-2 border-black relative overflow-hidden flex items-center justify-center">
+                    <img src="hajime/hajime pic.jpg" alt="Discipline Layout" class="w-full h-full manga-art-filter">
+                </div>
+            </div>
+            
+            <!-- PROJECT 3: EMAIL BOT / LIGHT YAGAMI -->
+            <div class="comic-border overflow-hidden grid grid-cols-1 lg:grid-cols-3 manga-panel-card reveal">
+                <div class="lg:col-span-2 p-8 space-y-4">
+                    <div class="flex justify-between items-start gap-4 flex-wrap">
+                        <h3 class="text-xl font-bold text-white uppercase tracking-tight">Email Automation Bot & Django Backend</h3>
+                        <span class="text-xs bg-white text-black font-bold px-3 py-1 uppercase">Oct 2025</span>
+                    </div>
+                    <p class="text-sm text-red-500 font-bold">Python, Django, Django ORM, MySQL</p>
+                    <ul class="text-sm text-zinc-400 space-y-2 list-disc pl-4">
+                        <li>Developed a class-based Python Gmail automation agent that authenticates via IMAP and processes Excel attachments.</li>
+                        <li>Built a full Django REST backend with ORM-based models, migrations, and CRUD APIs.</li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-1 bg-zinc-950 min-h-[200px] border-t-2 lg:border-t-0 lg:border-l-2 border-black relative overflow-hidden flex items-center justify-center">
+                    <img src="death note images/Death note.jpg" alt="Light Yagami Layout" class="w-full h-full manga-art-filter">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION & CERTIFICATIONS -->
+    <section id="education" class="py-20 border-t-4 border-black px-4 bg-[#0b0c10]/80 backdrop-blur-sm">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+            
+            <!-- EDUCATION COLUMN -->
+            <div class="md:col-span-1 reveal">
+                <h2 class="heading-font text-2xl font-bold uppercase text-white tracking-tight mb-6">Education</h2>
+                <div class="comic-border p-6 space-y-2">
+                    <span class="text-sm text-red-500 font-bold block">2023 - 2026</span>
+                    <h4 class="text-lg font-bold text-white uppercase">BCA (Software Engineering)</h4>
+                    <p class="text-sm text-zinc-400">Chanakya University — CGPA: 8.34/10</p>
+                    <p class="text-xs text-zinc-500 font-bold">Minor: Cyber Security</p>
+                </div>
+            </div>
+
+            <!-- CERTIFICATIONS COLUMN (UPDATED WITH LINKEDIN LINKS) -->
+            <div class="md:col-span-1 reveal" style="transition-delay: 200ms;">
+                <h2 class="heading-font text-2xl font-bold uppercase text-white tracking-tight mb-6">Certifications</h2>
+                <div class="comic-border p-6">
+                    <ul class="space-y-4 text-xs text-zinc-300 font-medium">
+                        <li class="flex flex-col gap-1">
+                            <div><span class="text-red-500 font-bold">▪</span> CICSA - Red Team Hackers Academy</div>
+                            <a href="https://linkedin.com/in/sachin-s-050370261" target="_blank" class="text-red-400 hover:text-white underline ml-3 font-mono text-[10px] tracking-widest">[VIEW CREDENTIAL]</a>
+                        </li>
+                        <li class="flex flex-col gap-1">
+                            <div><span class="text-red-500 font-bold">▪</span> Intro To Ethical Hacking - Offenso</div>
+                            <a href="https://linkedin.com/in/sachin-s-050370261" target="_blank" class="text-red-400 hover:text-white underline ml-3 font-mono text-[10px] tracking-widest">[VIEW CREDENTIAL]</a>
+                        </li>
+                        <li class="flex flex-col gap-1">
+                            <div><span class="text-red-500 font-bold">▪</span> K8s Security - RedTeam Security</div>
+                            <a href="https://linkedin.com/in/sachin-s-050370261" target="_blank" class="text-red-400 hover:text-white underline ml-3 font-mono text-[10px] tracking-widest">[VIEW CREDENTIAL]</a>
+                        </li>
+                        <li class="flex flex-col gap-1">
+                            <div><span class="text-red-500 font-bold">▪</span> AI Tools Workshop - be10x</div>
+                            <a href="https://linkedin.com/in/sachin-s-050370261" target="_blank" class="text-red-400 hover:text-white underline ml-3 font-mono text-[10px] tracking-widest">[VIEW CREDENTIAL]</a>
+                        </li>
+                        <li class="flex flex-col gap-1">
+                            <div><span class="text-red-500 font-bold">▪</span> Cyber Security Workshop - Vaultofcodes</div>
+                            <a href="https://linkedin.com/in/sachin-s-050370261" target="_blank" class="text-red-400 hover:text-white underline ml-3 font-mono text-[10px] tracking-widest">[VIEW CREDENTIAL]</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- EXTRAS / IMAGE COLUMN -->
+            <div class="md:col-span-1 reveal" style="transition-delay: 400ms;">
+                <h2 class="heading-font text-2xl font-bold uppercase text-white tracking-tight mb-6">Achievements</h2>
+                <div class="comic-border relative overflow-hidden manga-panel-card bg-zinc-900 h-full min-h-[250px]">
+                    <img src="onepice/achivement.jpg" alt="Haikyuu Team Achievement" class="w-full h-full manga-art-filter absolute inset-0">
+                    <div class="absolute bottom-0 w-full bg-black/80 backdrop-blur-sm p-4 text-xs text-white z-10 border-t-2 border-black">
+                        <ul class="space-y-2">
+                            <li><span class="text-red-500 font-bold">▪</span> South Zone Football Tournament</li>
+                            <li><span class="text-red-500 font-bold">▪</span> WebGoat & bWAPP Testing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT FOOTER -->
+    <footer id="contact" class="py-16 max-w-5xl mx-auto px-4 text-center border-t border-zinc-800 reveal">
+        <h2 class="heading-font text-3xl font-bold text-white uppercase tracking-tight mb-8">Contact</h2>
+        
+        <div class="flex flex-wrap justify-center gap-4 max-w-2xl mx-auto">
+            <a href="mailto:sachinsubhash286@gmail.com" class="px-6 py-3 comic-border text-white text-sm font-bold uppercase tracking-wider hover:bg-white hover:text-black transition-colors">
+                Email
+            </a>
+            <a href="https://linkedin.com/in/sachin-s-050370261" target="_blank" class="px-6 py-3 comic-border text-white text-sm font-bold uppercase tracking-wider hover:bg-white hover:text-black transition-colors">
+                LinkedIn
+            </a>
+            <a href="https://github.com/jhbvefgyehc" target="_blank" class="px-6 py-3 comic-border text-white text-sm font-bold uppercase tracking-wider hover:bg-white hover:text-black transition-colors">
+                GitHub
+            </a>
+            <a href="latestResume.pdf" target="_blank" class="px-6 py-3 comic-border bg-red-700 text-white text-sm font-bold uppercase tracking-wider hover:bg-red-600 transition-colors">
+                View Resume PDF
+            </a>
+        </div>
+    </footer>
+
+    <!-- INTERSECTION OBSERVER SCRIPT FOR SCROLL REVEAL -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll(".reveal").forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
